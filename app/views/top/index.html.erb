@@ -1,0 +1,13 @@
+<h1>rails4課題用サイトのトップ</h1>
+仕様：ノベルゲーム作成＆プレイサイト<br>
+なんかページ作ってレッツプレイ的なそんな雰囲気<br>
+<h3>めにゅー</h3>
+<%= link_to "ノベル管理", url_for(novels_url) %>
+<%= link_to "ページ管理", url_for(pages_url) %>
+<%= link_to "リンク管理", url_for(links_url) %><br>
+
+<h3>ノベル一覧</h3>
+<% Novel.all.each do |n| %>
+  <%= link_to n.title, url_for(novel_url(n.id)) %><br>
+  [<%= n.context %>]
+<% end %>
