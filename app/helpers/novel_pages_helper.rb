@@ -1,0 +1,2 @@
+module NovelPagesHelper
+end

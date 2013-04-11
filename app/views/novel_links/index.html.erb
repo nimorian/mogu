@@ -1,0 +1,31 @@
+<h1>Listing novel_links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>To page</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @novel_links.each do |novel_link| %>
+    <tr>
+      <td><%= novel_link.page %></td>
+      <td><%= novel_link.to_page_id %></td>
+      <td><%= novel_link.name %></td>
+      <td><%= link_to 'Show', novel_link %></td>
+      <td><%= link_to 'Edit', edit_novel_link_path(novel_link) %></td>
+      <td><%= link_to 'Destroy', novel_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Novel link', new_novel_link_path %>

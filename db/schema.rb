@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130410125506) do
+ActiveRecord::Schema.define(version: 20130411124334) do
 
-  create_table "links", force: true do |t|
+  create_table "novel_links", force: true do |t|
     t.integer  "page_id"
     t.integer  "to_page_id"
     t.string   "name"
@@ -21,15 +21,9 @@ ActiveRecord::Schema.define(version: 20130410125506) do
     t.datetime "updated_at"
   end
 
-  create_table "novels", force: true do |t|
-    t.string   "title"
-    t.text     "context"
-    t.string   "author"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "novel_links", ["page_id"], name: "index_novel_links_on_page_id"
 
-  create_table "pages", force: true do |t|
+  create_table "novel_pages", force: true do |t|
     t.integer  "novel_id"
     t.string   "title"
     t.text     "body"
@@ -38,9 +32,12 @@ ActiveRecord::Schema.define(version: 20130410125506) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "email"
+  add_index "novel_pages", ["novel_id"], name: "index_novel_pages_on_novel_id"
+
+  create_table "novels", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

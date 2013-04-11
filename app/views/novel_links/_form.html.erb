@@ -1,0 +1,29 @@
+<%= form_for(@novel_link) do |f| %>
+  <% if @novel_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@novel_link.errors.count, "error") %> prohibited this novel_link from being saved:</h2>
+
+      <ul>
+      <% @novel_link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :page %><br />
+    <%= f.text_field :page %>
+  </div>
+  <div class="field">
+    <%= f.label :to_page_id %><br />
+    <%= f.number_field :to_page_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

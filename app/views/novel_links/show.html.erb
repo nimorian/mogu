@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @novel_link.page %>
+</p>
+
+<p>
+  <strong>To page:</strong>
+  <%= @novel_link.to_page_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @novel_link.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_novel_link_path(@novel_link) %> |
+<%= link_to 'Back', novel_links_path %>

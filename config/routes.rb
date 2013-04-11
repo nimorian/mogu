@@ -1,4 +1,8 @@
 Mogu::Application.routes.draw do
+  resources :novel_links
+
+  resources :novel_pages
+
   root :to => "top#index"
 
   resources :links
