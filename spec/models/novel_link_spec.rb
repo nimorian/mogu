@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: novel_links
+#
+#  id         :integer          not null, primary key
+#  page_id    :integer
+#  to_page_id :integer
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'spec_helper'
 
 describe NovelLink do
